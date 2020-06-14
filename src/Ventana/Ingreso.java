@@ -110,7 +110,7 @@ public final class Ingreso extends JFrame {
         panelInferior.add(guardarnomina);
         panelInferior.add(calcularnomina);
         
-        panelFormulario.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        panelFormulario.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
         panelFormulario.setLayout(new BorderLayout(11,1));
         panelFormulario.add(panelIzquierdo,BorderLayout.WEST);
         panelFormulario.add(panelCentral,BorderLayout.CENTER);
@@ -119,7 +119,7 @@ public final class Ingreso extends JFrame {
         
        
         
-  pestaña.addTab("Registro_De_Datos", panelFormulario);
+  pestaña.addTab("Ingreso_De_Datos", panelFormulario);
   panelFormulario.setBackground(Color.LIGHT_GRAY);
   panelIzquierdo.setBackground(Color.LIGHT_GRAY);
   panelInferior.setBackground(Color.LIGHT_GRAY);
@@ -233,6 +233,14 @@ public final class Ingreso extends JFrame {
            String tdi = txttotaldeducidos.getText();
            String npa = txtnetoapagar.getText();
 
+           
+           if((txtcargo.getText().length()==0)){
+             JOptionPane.showMessageDialog(null, "No puede guardar con datos incompletos");
+             
+               
+            }
+            
+           else{
         
            Object datos2 [] = {ced, ape, nom, car, not, vho, tde, dsa, dpe, tdi, npa};
            
@@ -250,7 +258,7 @@ public final class Ingreso extends JFrame {
            txttotaldeducidos.setText("");
            txtnetoapagar.setText("");
         
-        }
+        }}
         
        
          });
